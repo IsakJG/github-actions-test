@@ -1,0 +1,29 @@
+name: JavaScript CI
+
+on:
+  push:
+  pull_request:
+
+
+jobs:
+    test:
+        runs-on: ubuntu-latest
+        
+        steps:
+            - name: Hent prosjektet 
+              uses: actions/checkout@v6
+
+            - name: Sett opp Node.js
+              uses: actions/setup-node@v7
+              with:
+                  node-version: 24
+
+            - name: Sjekk JavaScript
+              run: node --check Controller/app.js
+
+
+
+
+        
+
+ 
